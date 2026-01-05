@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #0f172a;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 420px;
+  width: 100%;
+  padding: 20px;
+}
+
+.card {
+  background: #020617;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 6px;
+}
+
+button.primary {
+  background: #22c55e;
+  color: black;
+  font-weight: bold;
+}
+
+button.danger {
+  background: #ef4444;
+}

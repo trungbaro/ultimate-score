@@ -1,0 +1,25 @@
+.scoreboard {
+  width: 100%;
+  max-width: 420px;
+}
+
+.teams {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.team {
+  width: 48%;
+  text-align: center;
+}
+
+.score {
+  font-size: 64px;
+  margin: 12px 0;
+}
+
+.timer {
+  text-align: center;
+  color: #94a3b8;
+}
