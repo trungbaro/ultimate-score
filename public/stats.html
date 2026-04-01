@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Player Stats</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/stats.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Player Statistics – Tournament</h2>
+  <div class="stats-controls">
+    <label>
+        Filter team:
+        <select id="teamFilter" onchange="applyFilter()">
+        <option value="all">All teams</option>
+        </select>
+    </label>
+
+    <label>
+        Sort by:
+        <select id="sortBy" onchange="applyFilter()">
+        <option value="total">Total (Goals + Assists)</option>
+        <option value="goals">Goals</option>
+        <option value="assists">Assists</option>
+        <option value="jersey">Jersey</option>
+        </select>
+    </label>
+    </div>
+
+  <table id="statsTable" class="stats-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Player</th>
+        <th>Team</th>
+        <th>Goals</th>
+        <th>Assists</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <button class="secondary mt-2" onclick="location.href='/dashboard.html'">
+    Back to Dashboard
+  </button>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/stats.js"></script>
+</body>
+</html>

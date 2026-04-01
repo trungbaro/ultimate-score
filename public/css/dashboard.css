@@ -1,0 +1,196 @@
+/* ===== DASHBOARD LAYOUT ===== */
+.dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.dashboard h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* ===== SECTION ===== */
+.section {
+  margin-top: 28px;
+}
+
+/* ===== ROUND ===== */
+.round {
+  margin-bottom: 24px;
+}
+
+.round h3 {
+  margin-bottom: 14px;
+  color: #38bdf8;
+  font-size: 18px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.round h3::before {
+  content: "●";
+  color: #22c55e;
+  font-size: 12px;
+}
+
+/* ===== MATCH CARD ===== */
+.match-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+
+  background: linear-gradient(180deg, #020617, #020617cc);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.35);
+}
+
+/* ===== MATCH INFO ===== */
+.match-info {
+  line-height: 1.6;
+}
+
+.match-info .teams {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.match-info .meta {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* ===== SCORE ===== */
+.match-score {
+  font-size: 26px;
+  font-weight: 800;
+  text-align: right;
+  min-width: 80px;
+}
+
+/* ===== BUTTON ===== */
+.match-card button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* ===== LEADERBOARD ===== */
+.leaderboard {
+  background: linear-gradient(180deg, #020617, #020617cc);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.leaderboard h3 {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ===== LEADERBOARD ROW ===== */
+.lb-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 70px;
+  align-items: center;
+  padding: 10px 6px;
+
+  border-bottom: 1px solid #1e293b;
+}
+
+.lb-row:last-child {
+  border-bottom: none;
+}
+
+.lb-row.header {
+  font-weight: 700;
+  color: #38bdf8;
+  font-size: 13px;
+}
+
+/* ===== RANK ===== */
+.lb-rank {
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ===== POINT ===== */
+.lb-points {
+  text-align: right;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+/* ===== TOP HIGHLIGHT ===== */
+.lb-row:nth-child(2) .lb-rank {
+  color: gold;
+}
+.lb-row:nth-child(3) .lb-rank {
+  color: silver;
+}
+.lb-row:nth-child(4) .lb-rank {
+  color: #cd7f32;
+}
+
+/* ===== BADGE ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge::before {
+  content: "●";
+  font-size: 10px;
+}
+
+.badge.played {
+  background: #16a34a;
+  color: #022c22;
+}
+
+.badge.played::before {
+  color: #022c22;
+}
+
+.badge.pending {
+  background: #334155;
+  color: #e5e7eb;
+}
+
+.badge.pending::before {
+  color: #94a3b8;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .match-card {
+    grid-template-columns: 1fr;
+  }
+
+  .match-score {
+    text-align: left;
+    font-size: 22px;
+  }
+}

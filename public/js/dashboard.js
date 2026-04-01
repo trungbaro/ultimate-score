@@ -1,0 +1,169 @@
+let DATA, T;
+function openStats() {
+  location.href = "/stats.html";
+}
+
+async function init() {
+  DATA = await loadData();
+  T = DATA.tournaments.find(t => t.id === DATA.currentTournament);
+
+  title.textContent = T.name;
+  renderMatches();
+  renderLeaderboard();
+}
+
+function teamName(id) {
+  return T.teams.find(t => t.id === id).name;
+}
+
+function renderMatches() {
+  matchList.innerHTML = "";
+
+  const grouped = {};
+  T.matches.forEach(m => {
+    grouped[m.round] = grouped[m.round] || [];
+    grouped[m.round].push(m);
+  });
+
+  Object.keys(grouped).forEach(r => {
+    const roundDiv = document.createElement("div");
+    roundDiv.className = "round";
+
+    roundDiv.innerHTML = `<h3>Round ${r}</h3>`;
+
+    grouped[r].forEach(m => {
+      const div = document.createElement("div");
+      div.className = "match-card";
+
+      div.innerHTML = `
+        <div class="match-info">
+          <div class="teams">
+            ${teamName(m.teamA)} vs ${teamName(m.teamB)}
+          </div>
+          <div class="meta">
+            Field ${m.field} • 
+            <span class="badge ${m.finished ? "played" : "pending"}">
+              ${m.finished ? "Finished" : "Not played"}
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <div class="match-score">
+            ${m.finished ? `${m.scoreA} - ${m.scoreB}` : "-"}
+          </div>
+          <button onclick="playMatch('${m.id}')">
+            ${m.finished ? "View" : "Play"}
+          </button>
+        </div>
+      `;
+
+      roundDiv.appendChild(div);
+    });
+
+    matchList.appendChild(roundDiv);
+  });
+}
+
+function renderMatch(m) {
+  const div = document.createElement("div");
+  div.className = "card mt-1";
+
+  div.innerHTML = `
+    ${teamName(m.teamA)} vs ${teamName(m.teamB)}<br>
+    ${m.finished ? `${m.scoreA}-${m.scoreB}` : "Not played"}
+    <button onclick="playMatch('${m.id}')">
+      ${m.finished ? "View" : "Play"}
+    </button>
+  `;
+
+  matchList.appendChild(div);
+}
+
+function renderLeaderboard() {
+  leaderboard.innerHTML = "";
+
+  if (T.format === "group" && T.groups) {
+    renderGroupLeaderboard("A");
+    renderGroupLeaderboard("B");
+  } else {
+    renderOverallLeaderboard();
+  }
+}
+
+function renderGroupLeaderboard(groupName) {
+  const teamIds = T.groups[groupName];
+  if (!teamIds) return;
+
+  const teams = T.teams
+    .filter(t => teamIds.includes(t.id))
+    .sort((a, b) => b.points - a.points);
+
+  const box = document.createElement("div");
+  box.className = "leaderboard";
+  box.innerHTML = `<h3>Group ${groupName}</h3>`;
+
+  box.innerHTML += `
+    <div class="lb-row header">
+      <div>#</div>
+      <div>Team</div>
+      <div>Pts</div>
+    </div>
+  `;
+
+  teams.forEach((t, i) => {
+    box.innerHTML += `
+      <div class="lb-row">
+        <div>${i + 1}</div>
+        <div>${t.name}</div>
+        <div class="lb-points">${t.points}</div>
+      </div>
+    `;
+  });
+
+  leaderboard.appendChild(box);
+}
+
+function renderOverallLeaderboard() {
+  const teams = [...T.teams].sort((a, b) => b.points - a.points);
+
+  const box = document.createElement("div");
+  box.className = "leaderboard";
+  box.innerHTML = `<h3>Overall Leaderboard</h3>`;
+
+  box.innerHTML += `
+    <div class="lb-row header">
+      <div>#</div>
+      <div>Team</div>
+      <div>Pts</div>
+    </div>
+  `;
+
+  teams.forEach((t, i) => {
+    box.innerHTML += `
+      <div class="lb-row">
+        <div>${i + 1}</div>
+        <div>${t.name}</div>
+        <div class="lb-points">${t.points}</div>
+      </div>
+    `;
+  });
+
+  leaderboard.appendChild(box);
+}
+
+async function playMatch(id) {
+  DATA.currentMatch = id;
+  await saveData(DATA);
+  location.href = "/game.html";
+}
+
+function canGeneratePlacement() {
+  return (
+    T.matches.length > 0 &&
+    T.matches.every(m => m.finished) &&
+    (!T.placement || !T.placement.generated)
+  );
+}
+
+init();

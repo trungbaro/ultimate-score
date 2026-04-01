@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Game</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="container card">
+  <h2 id="teams">Team A vs Team B</h2>
+
+  <div class="score">
+    <span id="scoreA">0</span>
+    :
+    <span id="scoreB">0</span>
+  </div>
+
+  <button id="btnTeamA" onclick="addScore('A')">+ Team A</button>
+  <button id="btnTeamB" onclick="addScore('B')">+ Team B</button>
+
+  <button class="secondary mt-2" onclick="undo()">UNDO</button>
+  <button class="danger mt-2" onclick="endMatch()">END MATCH</button>
+
+  <hr>
+
+  <h3>Point Details</h3>
+
+  <div class="point-section">
+    <h4 id="teamALabel">Team A</h4>
+    <table id="tableA">
+      <tr>
+        <th>#</th>
+        <th>Scorer</th>
+        <th>Assist</th>
+      </tr>
+    </table>
+  </div>
+
+  <div class="point-section">
+    <h4 id="teamBLabel">Team B</h4>
+    <table id="tableB">
+      <tr>
+        <th>#</th>
+        <th>Scorer</th>
+        <th>Assist</th>
+      </tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <h3>Match Summary</h3>
+
+  <div class="summary">
+
+    <div class="summary-team">
+      <h4 id="summaryTeamA">Team A</h4>
+      <table class="summary-table" id="summaryA">
+        <tr>
+          <th>#</th>
+          <th>Player</th>
+          <th>Goals</th>
+          <th>Assists</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="summary-team">
+      <h4 id="summaryTeamB">Team B</h4>
+      <table class="summary-table" id="summaryB">
+        <tr>
+          <th>#</th>
+          <th>Player</th>
+          <th>Goals</th>
+          <th>Assists</th>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div id="globalDropdown" class="global-dropdown hidden"></div>
+
+</div>
+
+
+
+
+<script src="/js/api.js"></script>
+<script src="/js/game.js"></script>
+</body>
+</html>

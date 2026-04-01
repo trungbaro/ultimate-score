@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Players</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="container card">
+  <h2>🧍 Players</h2>
+
+  <input id="playerName" placeholder="Player name">
+  <input id="jersey" type="number" placeholder="Jersey number">
+
+  <button class="primary" type="button" onclick="addPlayer()">Add Player</button>
+
+  <div id="playerList" class="mt-2"></div>
+
+  <button class="secondary mt-2" onclick="location.href='/teams.html'">
+    ← Back to Teams
+  </button>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/players.js"></script>
+</body>
+</html>

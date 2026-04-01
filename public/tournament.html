@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Tournament</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="container card">
+  <h2>🏆 Create Tournament</h2>
+
+  <input id="tName" placeholder="Tournament name">
+  <input id="teamCount" type="number" min="2" placeholder="Number of teams">
+
+  <button class="primary" type="button" onclick="createTournament()">
+    CREATE
+  </button>
+
+  <div id="list" class="mt-2"></div>
+
+  <button class="secondary mt-2" onclick="location.href='/'">
+    ← Back to Menu
+  </button>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/tournament.js"></script>
+</body>
+</html>
