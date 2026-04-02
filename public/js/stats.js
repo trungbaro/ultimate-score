@@ -35,8 +35,12 @@ function buildStats() {
     });
   });
 
+  let allMatches = [...T.matches];
+  if (T.placement && T.placement.matches) {
+    allMatches = allMatches.concat(T.placement.matches);
+  }
   // count from matches
-  T.matches
+  allMatches
     .filter(m => m.finished)
     .forEach(m => {
       (m.points || []).forEach(pt => {
@@ -69,6 +73,9 @@ function buildTeamFilter() {
 function applyFilter() {
   const teamVal = document.getElementById("teamFilter").value;
   const sortBy = document.getElementById("sortBy").value;
+  const keyword = document
+    .getElementById("searchInput")
+    .value.toLowerCase();
 
   let list = [...allStats];
 
@@ -76,7 +83,11 @@ function applyFilter() {
   if (teamVal !== "all") {
     list = list.filter(p => p.teamId === teamVal);
   }
-
+  if (keyword) {
+    list = list.filter(p =>
+      p.player.toLowerCase().includes(keyword)
+    );
+  }
   // sort
   list.sort((a, b) => {
     if (sortBy === "goals") return b.goals - a.goals;

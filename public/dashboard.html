@@ -1,15 +1,38 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/dashboard.css">
-<div class="container card">
-  <h2 id="title"></h2>
+<link rel="stylesheet" href="/css/main.css">
+<div class="container dashboard">
 
-  <h3>Matches</h3>
-  <div id="matchList"></div>
+  <div class="card">
+    <h2 id="title"></h2>
+  </div>
 
-  <h3>Leaderboard</h3>
-  <div id="leaderboard"></div>
-  <button class="secondary mt-2" onclick="openStats()">Player Stats</button>
+  <!-- MATCHES -->
+  <div class="section card">
+    <h3>Matches</h3>
+    <div id="matchList"></div>
+  </div>
 
-  <button onclick="location.href='/'">← Menu</button>
+  <!-- LEADERBOARD -->
+  <div class="section card">
+    <h3>Leaderboard</h3>
+    <div id="leaderboard"></div>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="section card actions">
+    <button id="btnPlacement" class="primary mt-2 hidden" onclick="startPlacement()">
+      Placement
+    </button>
+
+    <button class="secondary" onclick="openStats()">
+      Player Stats
+    </button>
+
+    <button onclick="location.href='/'">
+      ← Menu
+    </button>
+  </div>
 
 </div>
 

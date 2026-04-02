@@ -10,7 +10,10 @@ async function init() {
   }
 
   T = DATA.tournaments.find(t => t.id === DATA.currentTournament);
-  M = T.matches.find(m => m.id === DATA.currentMatch);
+  //M = T.matches.find(m => m.id === DATA.currentMatch);
+  M =
+    T.matches.find(m => m.id === DATA.currentMatch) ||
+    T.placement?.matches.find(m => m.id === DATA.currentMatch);
 
   if (!M) {
     alert("Match not found");
@@ -96,13 +99,16 @@ async function endMatch() {
   M.finished = true;
 
   // cộng leaderboard
-  teamA.points ??= 0;
-  teamB.points ??= 0;
+  if (!DATA.isPlacement) {
+    teamA.points ??= 0;
+    teamB.points ??= 0;
 
-  if (M.scoreA > M.scoreB) teamA.points += 1;
-  else if (M.scoreB > M.scoreA) teamB.points += 1;
+    if (M.scoreA > M.scoreB) teamA.points += 1;
+    else if (M.scoreB > M.scoreA) teamB.points += 1;
+  }
 
   DATA.currentMatch = null;
+  DATA.isPlacement = false;
   await saveData(DATA);
 
   location.href = "/dashboard.html";

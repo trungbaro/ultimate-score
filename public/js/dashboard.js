@@ -10,6 +10,13 @@ async function init() {
   title.textContent = T.name;
   renderMatches();
   renderLeaderboard();
+  renderPlacement();
+  if (canGoToPlacement()) {
+    btnPlacement.classList.remove("hidden");
+  } else {
+    btnPlacement.classList.add("hidden");
+  }
+
 }
 
 function teamName(id) {
@@ -158,12 +165,99 @@ async function playMatch(id) {
   location.href = "/game.html";
 }
 
-function canGeneratePlacement() {
+function isRobinFinished() {
+  return T.matches.length && T.matches.every(m => m.finished);
+}
+
+function canGoToPlacement() {
   return (
     T.matches.length > 0 &&
     T.matches.every(m => m.finished) &&
-    (!T.placement || !T.placement.generated)
+    !T.placement 
   );
 }
 
+async function startPlacement() {
+  // sort theo điểm
+  const ranked = [...T.teams].sort((a, b) => b.points - a.points);
+
+  if (ranked.length < 4) {
+    alert("Need at least 4 teams for placement");
+    return;
+  }
+
+  const finalA = ranked[0].id;
+  const finalB = ranked[1].id;
+
+  const thirdA = ranked[2].id;
+  const thirdB = ranked[3].id;
+
+  T.placement = {
+    generated: true,
+    matches: [
+      {
+        id: "p_final_" + Date.now(),
+        type: "final",
+        teamA: finalA,
+        teamB: finalB,
+        scoreA: null,
+        scoreB: null,
+        finished: false
+      },
+      {
+        id: "p_3rd_" + Date.now(),
+        type: "third",
+        teamA: thirdA,
+        teamB: thirdB,
+        scoreA: null,
+        scoreB: null,
+        finished: false
+      }
+    ]
+  };
+
+  await saveData(DATA);
+  renderPlacement();
+}
+
+function renderPlacement() {
+  if (!T.placement) return;
+
+  const box = document.createElement("div");
+  box.className = "card mt-2";
+  box.innerHTML = `<h3>🏆 Placement</h3>`;
+
+  T.placement.matches.forEach(m => {
+    const div = document.createElement("div");
+    div.className = "match-card";
+
+    const title =
+      m.type === "final" ? "Final" : "3rd Place Match";
+
+    div.innerHTML = `
+      <div>
+        <strong>${title}</strong><br>
+        ${teamName(m.teamA)} vs ${teamName(m.teamB)}
+      </div>
+
+      <div>
+        ${m.finished ? `${m.scoreA} - ${m.scoreB}` : "-"}
+        <button onclick="playPlacement('${m.id}')">
+          ${m.finished ? "View" : "Play"}
+        </button>
+      </div>
+    `;
+
+    box.appendChild(div);
+  });
+
+  matchList.appendChild(box);
+}
+
+async function playPlacement(id) {
+  DATA.currentMatch = id;
+  DATA.isPlacement = true; 
+  await saveData(DATA);
+  location.href = "/game.html";
+}
 init();

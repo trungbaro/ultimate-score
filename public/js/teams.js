@@ -13,7 +13,6 @@ async function init() {
     t => t.id === DATA.currentTournament
   );
 
-  // đảm bảo teams là mảng
   tournament.teams = tournament.teams || [];
   render();
 }
@@ -78,6 +77,17 @@ async function openPlayers(teamId) {
   await saveData(DATA);
   location.href = "/players.html";
 }
+
+async function deleteTeam(teamId) {
+  if (!confirm("Delete this Team?")) return;
+
+  tournament.teams = tournament.teams.filter(
+    t => t.id !== teamId
+  );
+  await saveData(DATA);
+  render();
+}
+
 
 async function generateBracket() {
   const teams = tournament.teams;
@@ -148,10 +158,24 @@ function chooseFormat() {
       location.href = "/dashboard.html";
       return;
     } else {
-      // người dùng MUỐN tạo lại → xóa cũ
+      // người dùng MUỐN tạo lại nen xóa cũ
       tournament.matches = [];
       tournament.format = null;
       tournament.groups = null;
+      tournament.placement = null;
+      tournament.teams.forEach(t => {
+        t.points = 0;
+      });
+      DATA.isPlacement = false;
+      DATA.currentMatch = null;
+      tournament.teams.forEach(t => {
+        t.points = 0;
+
+        t.players.forEach(p => {
+          p.goals = 0;
+          p.assists = 0;
+        });
+      })
     }
   }
 

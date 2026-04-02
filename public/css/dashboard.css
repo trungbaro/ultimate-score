@@ -1,8 +1,9 @@
 /* ===== DASHBOARD LAYOUT ===== */
+body {
+  display: block;
+}
 .dashboard {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+  width: 100%;
 }
 
 .dashboard h2 {
@@ -12,6 +13,12 @@
   font-weight: 700;
 }
 
+@media (max-width: 600px) {
+  .dashboard {
+    max-width: 100%;
+    padding: 12px;
+  }
+}
 /* ===== SECTION ===== */
 .section {
   margin-top: 28px;
@@ -46,8 +53,9 @@
   gap: 16px;
   align-items: center;
 
-  background: linear-gradient(180deg, #020617, #020617cc);
+  background: #020617;
   border: 1px solid #1e293b;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
   border-radius: 14px;
   padding: 14px 16px;
   margin-bottom: 12px;
@@ -56,8 +64,8 @@
 }
 
 .match-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,.35);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(0,0,0,.4);
 }
 
 /* ===== MATCH INFO ===== */
@@ -92,7 +100,7 @@
 
 /* ===== LEADERBOARD ===== */
 .leaderboard {
-  background: linear-gradient(180deg, #020617, #020617cc);
+  background: #020617;
   border: 1px solid #1e293b;
   border-radius: 14px;
   padding: 16px;

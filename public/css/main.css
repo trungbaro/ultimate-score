@@ -10,10 +10,11 @@ body {
   background: linear-gradient(180deg, #020617, #0f172a);
   color: #e5e7eb;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  body {
+  margin: 0;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block; 
+}
 }
 
 /* ===== LAYOUT ===== */
@@ -21,6 +22,7 @@ body {
   width: 100%;
   max-width: 420px;
   padding: 16px;
+  margin: auto;
 }
 
 /* ===== CARD ===== */

@@ -1,75 +1,324 @@
 {
   "tournaments": [
     {
-      "id": "t_1767633889774",
-      "name": "make it rain",
+      "id": "t_1775057678038",
+      "name": "Vleague",
       "teams": [
         {
-          "id": "team_1767633893278",
-          "name": "ms",
+          "id": "team_1775057722836",
+          "name": "T-REX",
           "players": [
             {
-              "id": "p_1767637753535",
-              "name": "bao",
-              "jersey": "3"
-            },
-            {
-              "id": "p_1767637757326",
-              "name": "mk",
-              "jersey": "7"
-            }
-          ],
-          "points": 3
-        },
-        {
-          "id": "team_1767633896104",
-          "name": "bp",
-          "players": [
-            {
-              "id": "p_1767637774599",
-              "name": "kien",
-              "jersey": "77"
-            },
-            {
-              "id": "p_1767637788163",
+              "id": "p_1775114140080",
               "name": "An",
-              "jersey": "18"
+              "jersey": "0",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114152180",
+              "name": "Trần Minh Hiếu",
+              "jersey": "1",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114159993",
+              "name": "Lê Bá Khánh",
+              "jersey": "2",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114167001",
+              "name": "Quân Mã",
+              "jersey": "3",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114174864",
+              "name": "Tín Lê",
+              "jersey": "4",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114184472",
+              "name": "Hữu Thức",
+              "jersey": "5",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114196644",
+              "name": "Anh Phương",
+              "jersey": "6",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114202565",
+              "name": "Khánh Trân",
+              "jersey": "7",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114212949",
+              "name": "Trà Khôi",
+              "jersey": "8",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114226076",
+              "name": "Quỳnh Như",
+              "jersey": "9",
+              "goals": 0,
+              "assists": 0
             }
           ],
-          "points": 5
-        },
-        {
-          "id": "team_1767633900247",
-          "name": "rmit",
-          "players": [],
           "points": 0
         },
         {
-          "id": "team_1767633914326",
-          "name": "seu",
-          "players": [],
-          "points": 8
+          "id": "team_1775057729656",
+          "name": "WOODY",
+          "players": [
+            {
+              "id": "p_1775114243740",
+              "name": "Nguyễn Lập",
+              "jersey": "0",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114249852",
+              "name": "Kiên Ngô",
+              "jersey": "1",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114254792",
+              "name": "Thế Bá",
+              "jersey": "2",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114259660",
+              "name": "Đỗ Khoa",
+              "jersey": "3",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114267812",
+              "name": "Đăng Khoa",
+              "jersey": "4",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114273836",
+              "name": "Phi Long",
+              "jersey": "5",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114287132",
+              "name": "Hồng Duyên (Dẹo)",
+              "jersey": "6",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114295940",
+              "name": "Haru",
+              "jersey": "7",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114307488",
+              "name": "Napu",
+              "jersey": "8",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775117803675",
+              "name": "Thanh Ngân",
+              "jersey": "9"
+            }
+          ],
+          "points": 0
         },
         {
-          "id": "team_1767633918472",
-          "name": "vb",
-          "players": [],
-          "points": 5
+          "id": "team_1775057733827",
+          "name": "LOSTO",
+          "players": [
+            {
+              "id": "p_1775114330768",
+              "name": "Huỳnh Thái",
+              "jersey": "0",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114333928",
+              "name": "Nam Cao",
+              "jersey": "1",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114339260",
+              "name": "Tommy",
+              "jersey": "2",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114350960",
+              "name": "Nguyễn Khoa",
+              "jersey": "3",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114358444",
+              "name": "Phú Hưng",
+              "jersey": "4",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114364372",
+              "name": "Bá Khôi",
+              "jersey": "5",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114371432",
+              "name": "Bích Dung",
+              "jersey": "6",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114387752",
+              "name": "Hải Nghi",
+              "jersey": "7",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114397707",
+              "name": "Thanh Ngân",
+              "jersey": "8",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114407079",
+              "name": "Chip",
+              "jersey": "9",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114415028",
+              "name": "Linh Lê",
+              "jersey": "10",
+              "goals": 0,
+              "assists": 0
+            }
+          ],
+          "points": 0
         },
         {
-          "id": "team_1767633924278",
-          "name": "flam",
-          "players": [],
-          "points": 6
+          "id": "team_1775057744400",
+          "name": "BUZZ LIGHTYEAR",
+          "players": [
+            {
+              "id": "p_1775114426632",
+              "name": "Hải Đăng",
+              "jersey": "0",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114433255",
+              "name": "Bi Nek",
+              "jersey": "1",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114438743",
+              "name": "Lewis",
+              "jersey": "3",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114453979",
+              "name": "Milo Trần",
+              "jersey": "4",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114459731",
+              "name": "Vĩ",
+              "jersey": "5",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775114466879",
+              "name": "Khôi Nguyên",
+              "jersey": "6",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775116597688",
+              "name": "Thảo Nguyên",
+              "jersey": "7",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775116605015",
+              "name": "Thiên Nhi",
+              "jersey": "8",
+              "goals": 0,
+              "assists": 0
+            },
+            {
+              "id": "p_1775116610023",
+              "name": "Nhật Tiên",
+              "jersey": "9",
+              "goals": 0,
+              "assists": 0
+            }
+          ],
+          "points": 0
         }
       ],
-      "createdAt": "2026-01-05T17:24:49.774Z",
+      "createdAt": "2026-04-01T15:34:38.038Z",
+      "format": "full",
+      "groups": null,
       "matches": [
         {
-          "id": "m_A_1767838617529_0_1",
-          "group": "A",
-          "teamA": "team_1767633896104",
-          "teamB": "team_1767633900247",
+          "id": "m_1775116985835_0_1",
+          "teamA": "team_1775057722836",
+          "teamB": "team_1775057729656",
           "scoreA": null,
           "scoreB": null,
           "finished": false,
@@ -77,21 +326,9 @@
           "field": 1
         },
         {
-          "id": "m_B_1767838617529_0_1",
-          "group": "B",
-          "teamA": "team_1767633924278",
-          "teamB": "team_1767633914326",
-          "scoreA": null,
-          "scoreB": null,
-          "finished": false,
-          "round": 1,
-          "field": 2
-        },
-        {
-          "id": "m_A_1767838617529_0_2",
-          "group": "A",
-          "teamA": "team_1767633896104",
-          "teamB": "team_1767633918472",
+          "id": "m_1775116985835_2_3",
+          "teamA": "team_1775057733827",
+          "teamB": "team_1775057744400",
           "scoreA": null,
           "scoreB": null,
           "finished": false,
@@ -99,21 +336,9 @@
           "field": 1
         },
         {
-          "id": "m_B_1767838617529_0_2",
-          "group": "B",
-          "teamA": "team_1767633924278",
-          "teamB": "team_1767633893278",
-          "scoreA": null,
-          "scoreB": null,
-          "finished": false,
-          "round": 2,
-          "field": 2
-        },
-        {
-          "id": "m_A_1767838617529_1_2",
-          "group": "A",
-          "teamA": "team_1767633900247",
-          "teamB": "team_1767633918472",
+          "id": "m_1775116985835_0_2",
+          "teamA": "team_1775057722836",
+          "teamB": "team_1775057733827",
           "scoreA": null,
           "scoreB": null,
           "finished": false,
@@ -121,42 +346,49 @@
           "field": 1
         },
         {
-          "id": "m_B_1767838617529_1_2",
-          "group": "B",
-          "teamA": "team_1767633914326",
-          "teamB": "team_1767633893278",
+          "id": "m_1775116985835_1_3",
+          "teamA": "team_1775057729656",
+          "teamB": "team_1775057744400",
           "scoreA": null,
           "scoreB": null,
           "finished": false,
-          "round": 3,
-          "field": 2
+          "round": 4,
+          "field": 1
+        },
+        {
+          "id": "m_1775116985835_0_3",
+          "teamA": "team_1775057722836",
+          "teamB": "team_1775057744400",
+          "scoreA": null,
+          "scoreB": null,
+          "finished": false,
+          "round": 5,
+          "field": 1
+        },
+        {
+          "id": "m_1775116985835_1_2",
+          "teamA": "team_1775057729656",
+          "teamB": "team_1775057733827",
+          "scoreA": null,
+          "scoreB": null,
+          "finished": false,
+          "round": 6,
+          "field": 1
         }
       ],
-      "format": "group",
-      "groups": {
-        "A": [
-          "team_1767633896104",
-          "team_1767633900247",
-          "team_1767633918472"
-        ],
-        "B": [
-          "team_1767633924278",
-          "team_1767633914326",
-          "team_1767633893278"
-        ]
-      },
-      "fields": 2,
+      "fields": 1,
       "lastPlayed": {
-        "team_1767633896104": 2,
-        "team_1767633900247": 3,
-        "team_1767633924278": 2,
-        "team_1767633914326": 3,
-        "team_1767633918472": 3,
-        "team_1767633893278": 3
-      }
+        "team_1775057722836": 5,
+        "team_1775057729656": 6,
+        "team_1775057733827": 6,
+        "team_1775057744400": 5
+      },
+      "placement": null
     }
   ],
-  "currentTournament": "t_1767633889774",
+  "currentTournament": "t_1775057678038",
   "currentMatch": null,
-  "currentTeam": "team_1767633893278"
+  "currentTeam": "team_1775057729656",
+  "currentElimMatch": null,
+  "isPlacement": false
 }
